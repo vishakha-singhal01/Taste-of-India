@@ -1,0 +1,39 @@
+{
+  "homepage": "https://github.com/vishakha-singhal01/Taste-of-India.git#readme",
+  "name": "tasteofindia",
+  "version": "1.0.0",
+  "description": "A production ready Food Ordering App built in Reactjs using redux toolkit and talwind css. It is a UI Microservice Architecture which often used in companies. Now, you can order your favorite food at one click.",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishakha-singhal01/Taste-of-India.git"
+  },
+  "author": "Vishakha Singhal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishakha-singhal01/Taste-of-India/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.8.2",
+    "parcel-bundler": "^1.12.5",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.6"
+  },
+  "dependencies": {
+    "flowbite": "^1.6.3",
+    "node-fetch": "^2.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.7.0"
+  }
+}
