@@ -15,7 +15,7 @@ const RestrauranatMenu = () => {
 
   return (
     <div>
-      <div className="items-center flex flex-col md:flex-row md:space-y-0 space-y-3 p-4 md:p-8 justify-around bg-orange-100 rounded-xl m-4 md:m-8">
+      <div className="items-center flex flex-col md:flex-row md:space-y-0 shadow-lg space-y-3 p-4 md:p-8 justify-around bg-gray-100 rounded-xl m-4 md:m-8 ml-16 md:ml-20">
         <div className="md:hidden text-center">
           <h1 className="font-bold text-sm md:text-4xl">{restaurant?.name}</h1>
           <p>{restaurant?.cuisines?.join(", ")}</p>

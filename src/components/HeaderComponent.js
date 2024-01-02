@@ -1,13 +1,14 @@
 import { useState } from "react";
 import logo from "../assets/logo1.png";
-import user from "../assets/user.png";
 import { BsCart4 } from "react-icons/bs";
-import { RiRadioButtonLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import useNetwork from "../utils/useNetwork";
 
+// ... (other imports)
+
 const HeaderComponent = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const isOnline = useNetwork();
   const navigationPages = [
     { name: "Home", to: "/" },
@@ -15,42 +16,59 @@ const HeaderComponent = () => {
     { name: "Contact", to: "/contact-us" },
   ];
 
-  return (
-    <>
-      <nav className="bg-white shadow-lg rounded-lg p-4 w-full">
-        <div className="container navbar-container flex items-center justify-between mx-auto">
-          <div className="flex items-center">
-            <img src={logo} className="pl-2 w-20 h-16 mr-3" alt="Flowbite Logo" />
-            <span className="text-xl font-bold">TasteOfIndia</span>
-          </div>
+  const toggleNav = () => {
+    setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
+  };
 
-          <ul className="flex items-center space-x-8 md:space-x-4">
+  return (
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-lg md:ml-16"    >
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+        <div className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src={logo} className="h-8" alt="TasteOfIndia Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TasteOfIndia</span>
+        </div>
+
+        {/* Hamburger Button */}
+        <button
+          onClick={toggleNav}
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+
+        {/* Navigation List */}
+        <div className={`md:flex md:w-auto ${isNavOpen ? 'block' : 'hidden'}`} id="navbar-default">
+          <ul className="font-medium flex flex-col md:flex-row md:space-x-8 rtl:space-x-reverse">
             {navigationPages.map((item) => (
-              <li key={item.to} className="group">
+              <li key={item.to}>
                 <Link
                   to={item.to}
-                  className="text-blue-700 hover:bg-yellow-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   {item.name}
                 </Link>
               </li>
             ))}
-            <li className="group ml-auto">
-              <BsCart4 className="text-2xl text-blue-700 group-hover:text-white" />
-            </li>
-            <li className={`group relative ${isOnline ? 'text-green-500' : 'text-red-500'}`}>
-              <RiRadioButtonLine className="text-2xl group-hover:text-white" style={{ top: "3px", position: "relative" }} />
-            </li>
-            <li className="group">
-              <button onClick={() => setIsLoggedIn(!isLoggedIn)} className="text-blue-700 hover:bg-yellow-500 hover:text-white px-3 py-2 rounded-lg transition duration-300">
+            <li>
+              <button
+                onClick={() => setIsLoggedIn(!isLoggedIn)}
+                className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+              >
                 {isLoggedIn ? "Logout" : "Login"}
               </button>
             </li>
+            <li>
+              <BsCart4 className="text-2xl text-blue-700" />
+            </li>
           </ul>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 
 export default HeaderComponent;
+

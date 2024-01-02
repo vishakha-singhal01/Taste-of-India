@@ -19,7 +19,7 @@ const Body = () => {
     <>
       <div className="flex justify-center">
         <input
-          className="m-3 p-3 w-80 rounded-full"
+          className="m-3 p-3 w-80 rounded-full shadow-sm"
           placeholder={"🔍 Search a restaurant you want..."}
           type="text"
           value={searchText}
