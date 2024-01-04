@@ -15,7 +15,7 @@ const Contact = () => {
     <div className='container-max min-h-screen ml-12'>
       <img className='text-2xl my-4 font-bold' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7iXbo7SFGkBtFZNQ0xCMFSOfqeivJhZHrbw&usqp=CAU'/>
       <div>
-        <h2 className='text-xl font-semibold'>Hi 👋, I'm {details.name} 👩‍🍳</h2>
+        <h2 className='text-xl font-semibold'>Hi 👋, My name is {details.name} 👩‍🍳</h2>
         <p className='text-lg'>{details.bio}</p>
 
         <div className='my-4 space-y-2 ml-1'>
