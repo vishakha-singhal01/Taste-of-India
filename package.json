@@ -29,6 +29,7 @@
     "tailwindcss": "^3.2.6"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
     "flowbite": "^1.6.3",
     "node-fetch": "^2.6.8",
     "react": "^18.2.0",
