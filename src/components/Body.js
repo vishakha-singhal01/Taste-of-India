@@ -29,8 +29,9 @@ const Body = () => {
             setFileredData(data);
           }}
         />
+        
       </div>
-      <div className="w-auto flex flex-wrap justify-center">
+      <div className="w-full flex flex-wrap justify-center">
         {fileredData.length > 0 ? (
           fileredData?.map((restaurant) => {
             return (

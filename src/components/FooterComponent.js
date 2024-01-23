@@ -1,12 +1,16 @@
-const FooterComponent = () => {
+const Footer = () => {
   return (
-    <div className="h-8 items-center flex drop-shadow-lg justify-center bg-gray-400 ml-16">
-      <p>
-        Made with ❣️ by{" "}
-        <a href="https://www.linkedin.com/in/aniket-kasale/">Vishakha Singhal</a>
-      </p>
+    <div className='container-max text-center py-4 border-t'>
+      TOI ❤, made by{' '}
+      <a
+        href='https://github.com/vishakha-singhal01'
+        target={'_blank'}
+        className='text-blue-500'
+      >
+        👩‍🍳 Vishakha Singhal
+      </a>
     </div>
   );
 };
+export default Footer;
 
-export default FooterComponent;

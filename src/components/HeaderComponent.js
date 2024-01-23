@@ -21,7 +21,7 @@ const HeaderComponent = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-lg md:ml-16"    >
+    <nav className="bg-white border-gray-200 dark:bg-gray-900"    >
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={logo} className="h-8" alt="TasteOfIndia Logo" />
